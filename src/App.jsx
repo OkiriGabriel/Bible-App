@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import MainLoader from './components/helpers/MainLoader'
+import Axios from 'axios';
+import {Link, useParams, useHistory} from 'react-router-dom';
+import * as moment from 'moment';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+    // context Apis
+
+    // contexts
+
+    // states
+
+    // components: lazyload pages
+    const Home = React.lazy(() => import ('./components/pages/Home') )
+
+
+const App = () => {
+
+
+
+    return (
+        <>
+         
+          <Router>
+            <Suspense fallback={MainLoader()}>
+              <Switch>
+                <Route exact path="/" component={Home} />
+              </Switch>
+            </Suspense>
+          </Router>
+         
+        </>
+    )
 }
 
-export default App;
+export default App

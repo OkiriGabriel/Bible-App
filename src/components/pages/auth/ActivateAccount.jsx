@@ -3,7 +3,7 @@ import Axios from 'axios';
 import {Link, useParams, useHistory} from 'react-router-dom';
 import * as moment from 'moment';
 
-const Home = () => {
+const ActivateAccount = () => {
 
     // variables
     const histiory = useHistory();
@@ -23,10 +23,10 @@ const Home = () => {
     return (
         <>
             <h1>
-                Home
+                Activate your account
             </h1>
         </>
     )
 }
 
-export default Home
+export default ActivateAccount

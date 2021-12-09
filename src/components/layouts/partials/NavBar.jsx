@@ -3,7 +3,7 @@ import Axios from 'axios';
 import {Link, useParams, useHistory} from 'react-router-dom';
 import * as moment from 'moment';
 
-const Home = () => {
+const Navbar = () => {
 
     // variables
     const histiory = useHistory();
@@ -23,10 +23,10 @@ const Home = () => {
     return (
         <>
             <h1>
-                Home
+                Nav Bar
             </h1>
         </>
     )
 }
 
-export default Home
+export default Navbar
